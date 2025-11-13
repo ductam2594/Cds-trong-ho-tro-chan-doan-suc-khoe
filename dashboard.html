@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MindCare - Trang chủ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="/css/style.css" rel="stylesheet"/>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f8f9fa; }
+    .sidebar { width: 260px; height: 100vh; position: fixed; top: 0; left: 0; background: #2c3e50; color: white; padding-top: 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.1); overflow-y: auto; }
+    .sidebar h4 { text-align: center; margin-bottom: 20px; color: #3498db; font-weight: 600; }
+    .profile-card { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 15px; margin: 0 15px 20px; text-align: center; backdrop-filter: blur(5px); }
+    .profile-card img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db; margin-bottom: 10px; }
+    .profile-card h6 { margin: 5px 0; font-size: 1rem; }
+    .profile-card small { font-size: 0.8rem; opacity: 0.8; }
+    .nav-link { color: #ecf0f1; padding: 12px 20px; border-radius: 8px; margin: 5px 15px; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+    .nav-link:hover, .nav-link.active { background: #3498db; color: white; }
+    .nav-link i { width: 25px; font-size: 1.1rem; }
+    .logout-btn { color: #e74c3c; }
+    .logout-btn:hover { background: #c0392b; color: white; }
+    .main-content { margin-left: 260px; padding: 30px; min-height: 100vh; }
+    .welcome-title { font-size: 2rem; color: #2c3e50; margin-bottom: 10px; }
+    .feature-cards { margin-top: 30px; }
+    .feature-card { background: white; border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-card i { font-size: 2.5rem; margin-bottom: 15px; }
+    .btn-appointment { background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 500; }
+    .btn-appointment:hover { background: #2980b9; }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR TRÁI -->
+  <div class="sidebar">
+    <h4>MindCare</h4>
+
+    <!-- HỒ SƠ NGƯỜI BỆNH -->
+    <div class="profile-card">
+      <img src="/img/user-avatar.png" alt="Avatar" id="user-avatar">
+      <h6 id="user-name">Đang tải...</h6>
+      <small id="user-email" class="text-muted"></small>
+    </div>
+
+    <!-- MENU CHỨC NĂNG -->
+    <nav class="nav flex-column">
+      <a href="/diagnosis.html" class="nav-link"><i class="fas fa-clipboard-list"></i> Chẩn đoán PHQ-9</a>
+      <a href="/chat.html" class="nav-link"><i class="fas fa-comments"></i> Chat AI</a>
+      <a href="/call.html" class="nav-link"><i class="fas fa-video"></i> Video Call</a>
+      <a href="/appointment.html" class="nav-link"><i class="fas fa-calendar-plus"></i> Đặt lịch</a>
+      <a href="/history.html" class="nav-link"><i class="fas fa-history"></i> Lịch sử</a>
+      <a href="#" class="nav-link logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+    </nav>
+  </div>
+
+  <!-- NỘI DUNG CHÍNH -->
+  <div class="main-content">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="welcome-title">Xin chào, <span id="welcome-name">bạn</span>!</h2>
+        <a href="/appointment.html" class="btn btn-appointment">+ Đặt lịch</a>
+      </div>
+
+      <p class="text-muted">Chọn chức năng bên trái để bắt đầu hành trình chăm sóc sức khỏe tâm lý.</p>
+
+      <!-- 3 CARD TÍNH NĂNG -->
+      <div class="row feature-cards g-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <i class="fas fa-heartbeat text-primary"></i>
+            <h5>Chăm sóc toàn diện</h5>
+            <p>AI tư vấn 24/7, kết nối bác sĩ nhanh chóng</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <i class="fas fa-shield-alt text-success"></i>
+            <h5>Bảo mật tuyệt đối</h5>
+            <p>Dữ liệu được mã hóa, chỉ bạn và bác sĩ biết</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <i class="fas fa-headset text-info"></i>
+            <h5>Hỗ trợ tức thì</h5>
+            <p>Chat AI trả lời trong 2 giây</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="/js/auth.js"></script>
+  <script>
+    // HIỂN THỊ THÔNG TIN NGƯỜI DÙNG
+    document.addEventListener('DOMContentLoaded', () => {
+      const name = localStorage.getItem('userName') || 'Người dùng';
+      const email = localStorage.getItem('userEmail') || 'email@example.com';
+      
+      document.getElementById('user-name').textContent = name;
+      document.getElementById('user-email').textContent = email;
+      document.getElementById('welcome-name').textContent = name;
+
+      // Đánh dấu trang hiện tại
+      const currentPath = window.location.pathname;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // ĐĂNG XUẤT
+    function logout() {
+      if (confirm('Bạn có chắc muốn đăng xuất?')) {
+        localStorage.clear();
+        window.location.href = '/login.html';
+      }
+    }
+  </script>
+</body>
+</html>
