@@ -5,7 +5,7 @@
 </h2>
 
 <h2 align="center">
-    ỨNG DỤNG CHUYỂN ĐỔI SỐ TRONG HỖ TRỢ CHẨN ĐOÁN SỨC KHỎE TÂM LÍ
+    CHUYỂN ĐỔI SỐ TRONG HỖ TRỢ CHẨN ĐOÁN SỨC KHỎE TÂM LÍ
 </h2>
 
 <div align="center">
