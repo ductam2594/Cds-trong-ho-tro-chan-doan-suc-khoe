@@ -62,8 +62,48 @@ Dự án được xây dựng với 100% **Kotlin** và áp dụng các công ng
 
 ### 2.2. Sơ đồ kiến trúc (MVVM)
 Ứng dụng tuân thủ nghiêm ngặt kiến trúc MVVM, phân tách rõ ràng các lớp (layer):
+![alt text](2.png)
 
-![Sơ đồ kiến trúc MVVM]([ĐƯỜNG_DẪN_ĐẾN_ẢNH_KIẾN_TRÚC_TỔNG_THỂ.png])
 
 ### 2.3. Cấu trúc thư mục
 Cấu trúc thư mục được tổ chức theo từng lớp chức năng (layer) của MVVM:
+
+![alt text](1.png)
+
+## ⚙️ CHƯƠNG 3: HƯỚNG DẪN CÀI ĐẶT VÀ SỬ DỤNG
+
+### 3.1. Yêu cầu hệ thống
+* Android Studio Iguana (2023.2.1) hoặc mới hơn.
+* Android SDK 34 (Android 14).
+* Thiết bị Android hoặc máy ảo (Emulator) chạy Android 8.0 (Oreo) trở lên.
+
+### 3.2. Các bước cài đặt
+1.  **Clone Repository**
+    ```bash
+    git clone [https://github.com/](https://github.com/)[TÊN_GITHUB_CỦA_BẠN]/[TÊN_REPO_CỦA_BẠN].git
+    ```
+
+2.  **Mở dự án**
+    * Mở **Android Studio**.
+    * Chọn `File` > `Open` và trỏ đến thư mục dự án bạn vừa clone.
+
+3.  **Đồng bộ hóa Gradle**
+    * Đợi Android Studio tự động tải về và đồng bộ hóa các thư viện (dependencies) đã khai báo trong file `build.gradle.kts`.
+
+4.  **Chạy ứng dụng**
+    * Nhấn nút `Run 'app'` (biểu tượng ▶ màu xanh lá) và chọn thiết bị (máy ảo hoặc máy thật) để chạy.
+
+---
+
+## 👤 4. Liên hệ
+
+Dự án được thực hiện bởi:
+
+* **Đỗ Huy Dũng**
+    * MSV: 1671020065
+    * Email: 1671020065@dnu.edu.vn
+* **Nguyễn Đức Tâm**
+    * MSV: 1671020280
+    * Email: 1671020280@dnu.edu.vn
+
+**Trường Đại học Đại Nam - Khoa Công nghệ thông tin**
