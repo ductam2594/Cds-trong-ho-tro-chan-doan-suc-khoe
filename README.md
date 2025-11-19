@@ -26,39 +26,46 @@ Dự án ứng dụng Android được phát triển cho môn học **Chuyển �
 
 ---
 
-## 🧩 CHƯƠNG 1: GIỚI THIỆU HỆ THỐNG
+## 📖 1. Giới thiệu hệ thống
 
-### 1.1. Bối cảnh
-Trong bối cảnh chuyển đổi số đang diễn ra mạnh mẽ trong lĩnh vực y tế (Digital Health), việc tiếp cận các công cụ chăm sóc sức khỏe tâm lý vẫn còn nhiều rào cản. Dự án này được xây dựng nhằm cung cấp một công cụ đơn giản, riêng tư và tiện lợi, cho phép người dùng tự kiểm tra và theo dõi các dấu hiệu tâm lý của bản thân ngay trên thiết bị di động.
+**Ứng dụng Chuyển đổi số Hỗ trợ Chẩn đoán Sức khỏe Tâm lý** là một giải pháp công nghệ y tế (HealthTech) được phát triển nhằm số hóa quy trình sàng lọc và chăm sóc sức khỏe tinh thần. Thay vì sử dụng các bảng câu hỏi giấy truyền thống tốn kém và chủ quan, hệ thống cung cấp một công cụ tự động, riêng tư và khoa học ngay trên thiết bị di động.
 
-### 1.2. Chức năng chính
-Ứng dụng cung cấp một quy trình khép kín từ kiểm tra đến theo dõi kết quả:
-* **Thực hiện bài kiểm tra:** Cung cấp 9 câu hỏi chuẩn hóa của thang đo PHQ-9.
-* **Tính điểm & Phân loại:** Tự động tính tổng điểm sau khi hoàn tất và đưa ra 5 mức độ phân loại (Không, Nhẹ, Trung bình, Nặng, Rất nặng).
-* **Lưu trữ lịch sử:** Tự động lưu kết quả (điểm số, mức độ, ngày giờ) vào cơ sở dữ liệu cục bộ trên máy.
-* **Xem lịch sử:** Cung cấp màn hình danh sách, cho phép xem lại toàn bộ các lần kiểm tra trước đó.
-* **Trực quan hóa xu hướng:** Sử dụng biểu đồ đường để trực quan hóa sự thay đổi điểm số theo thời gian, giúp người dùng dễ dàng theo dõi tiến trình.
-* **Quản lý dữ liệu:** Cho phép người dùng xóa toàn bộ lịch sử dữ liệu để đảm bảo quyền riêng tư.
+### 💡 Tại sao cần ứng dụng này?
+Trong bối cảnh áp lực cuộc sống hiện đại gia tăng, việc tiếp cận các dịch vụ tâm lý thường gặp rào cản về chi phí, thời gian và sự e ngại (stigma). Ứng dụng này giúp:
+* **Sàng lọc sớm:** Tự nhận diện các dấu hiệu bất ổn như trầm cảm hoặc lo âu.
+* **Xóa bỏ rào cản:** Người dùng có thể tự kiểm tra tại nhà, riêng tư và bảo mật.
+* **Kết nối chuyên gia:** Cầu nối trực tiếp giữa bệnh nhân và bác sĩ tâm lý.
+
+### 🛠️ Chức năng chính
+| Thành phần | Chức năng chi tiết |
+| :--- | :--- |
+| **Chẩn đoán tự động** | - Tích hợp thang đo chuẩn y khoa **PHQ-9** (Trầm cảm) và **GAD-7** (Lo âu).<br>- Tự động tính điểm và phân loại mức độ rủi ro (Bình thường, Nhẹ, Nặng). |
+| **Trợ lý ảo AI** | - Chatbot thông minh hoạt động 24/7.<br>- Hỗ trợ sơ cứu tâm lý ban đầu, lắng nghe và xoa dịu cảm xúc. |
+| **Telemedicine** | - Đặt lịch khám trực tuyến.<br>- **Video Call 1-1** chất lượng cao với bác sĩ/chuyên gia tâm lý. |
+| **Quản lý hồ sơ** | - Lưu trữ lịch sử khám bệnh cục bộ (Offline-first).<br>- Biểu đồ trực quan theo dõi biến động tâm lý theo thời gian. |
+
+### 🔥 Điểm nổi bật
+* ✅ **Khoa học:** Dựa trên các quy chuẩn y khoa quốc tế.
+* ✅ **Bảo mật:** Dữ liệu nhạy cảm được mã hóa và ưu tiên lưu trữ trên thiết bị người dùng.
+* ✅ **Hiện đại:** Giao diện Material Design 3 thân thiện, dễ sử dụng.
 
 ---
 
-## 💻 CHƯƠNG 2: CÔNG NGHỆ SỬ DỤNG
+## 🔧 2. Công nghệ sử dụng
 
-### 2.1. Công nghệ cốt lõi
-Dự án được xây dựng với 100% **Kotlin** và áp dụng các công nghệ hiện đại nhất trong hệ sinh thái Android Jetpack:
+Dự án áp dụng các công nghệ và kiến trúc hiện đại nhất của lập trình Android (Native).
 
-| Thành phần | Công nghệ | Mục đích sử dụng |
-| :--- | :--- | :--- |
-| **Ngôn ngữ** | Kotlin | Ngôn ngữ lập trình chính, hỗ trợ bất đồng bộ với Coroutines. |
-| **Kiến trúc** | MVVM | (Model-View-ViewModel) Tách biệt logic, UI và dữ liệu. |
-| **Giao diện (UI)** | Material Design 3 | Thiết kế giao diện hiện đại, tuân thủ chuẩn Google. |
-| **Liên kết View** | View Binding | Thay thế `findViewById` một cách an toàn. |
-| **Điều hướng** | Jetpack Navigation | Quản lý luồng di chuyển giữa các Fragment trong một Activity duy nhất. |
-| **Lưu trữ CSDL** | Room Persistence Library | Lưu trữ cục bộ (SQLite) lịch sử bài kiểm tra. |
-| **Quản lý trạng thái** | LiveData / StateFlow | Đồng bộ dữ liệu từ ViewModel tới UI một cách tự động. |
-| **Biểu đồ** | MPAndroidChart | Vẽ biểu đồ đường để theo dõi xu hướng điểm số. |
-| **DI** | Hilt | Quản lý và "tiêm" các phụ thuộc (như Repository, Database). |
-| **Build** | Gradle Kotlin DSL | Quản lý thư viện và cấu hình build. |
+| Danh mục | Công nghệ / Thư viện |
+| :--- | :--- |
+| **Ngôn ngữ** | [![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)](https://kotlinlang.org/) |
+| **Kiến trúc** | **MVVM** (Model-View-ViewModel) |
+| **Giao diện** | XML, Material Design 3, View Binding |
+| **Cơ sở dữ liệu** | **Room Database** (Offline-first storage) |
+| **Xử lý dữ liệu** | Coroutines, Flow, LiveData |
+| **Biểu đồ** | MPAndroidChart |
+| **Dependency Injection** | Hilt (Dagger) |
+
+---
 
 ### 2.2. Sơ đồ kiến trúc (MVVM)
 Ứng dụng tuân thủ nghiêm ngặt kiến trúc MVVM, phân tách rõ ràng các lớp (layer):
@@ -70,14 +77,31 @@ Cấu trúc thư mục được tổ chức theo từng lớp chức năng (laye
 
 ![alt text](1.png)
 
-## ⚙️ CHƯƠNG 3: HƯỚNG DẪN CÀI ĐẶT VÀ SỬ DỤNG
+---
 
-### 3.1. Yêu cầu hệ thống
+ ## 🖼️ 3. Hình ảnh các chức năng
+
+ ### 📱 Màn hình chính & Chẩn đoán
+> Giao diện Dashboard trực quan và bài kiểm tra trắc nghiệm tâm lý.
+
+![alt text](12.png)
+![alt text](9.png)
+
+### 🤖 Chat AI & Video Call
+> Trò chuyện với trợ lý ảo và tư vấn trực tuyến với bác sĩ.
+
+![alt text](6.png)
+![alt text](5.png)
+---
+
+## 🚀 4. Các bước cài đặt
+
+### 4.1. Yêu cầu hệ thống
 * Android Studio Iguana (2023.2.1) hoặc mới hơn.
 * Android SDK 34 (Android 14).
 * Thiết bị Android hoặc máy ảo (Emulator) chạy Android 8.0 (Oreo) trở lên.
 
-### 3.2. Các bước cài đặt
+### 4.2. Các bước cài đặt
 1.  **Clone Repository**
     ```bash
     git clone [https://github.com/](https://github.com/)[TÊN_GITHUB_CỦA_BẠN]/[TÊN_REPO_CỦA_BẠN].git
@@ -95,7 +119,7 @@ Cấu trúc thư mục được tổ chức theo từng lớp chức năng (laye
 
 ---
 
-## 👤 4. Liên hệ
+## 👤 5. Liên hệ
 
 Dự án được thực hiện bởi:
 
