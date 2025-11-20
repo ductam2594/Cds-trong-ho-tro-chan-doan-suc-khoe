@@ -52,6 +52,7 @@ Trong bối cảnh áp lực cuộc sống hiện đại gia tăng, việc tiế
 ---
 
 ## 🔧 2. Công nghệ sử dụng
+### 2.1. Các công nghệ sử dụng
 
 Dự án áp dụng các công nghệ và kiến trúc hiện đại nhất của lập trình Android (Native).
 
